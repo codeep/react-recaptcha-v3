@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ExampleReCaptcha from './ExampleReCaptcha';
-import { loadReCaptcha } from '../src';
+import { loadReCaptcha } from 'react-recaptcha-v3';
 
 class Example extends Component {
 

@@ -1,4 +1,4 @@
-# react-recaptcha-google
+# react-recaptcha-v3
 
 This component is created in order to make the experience of integrating Google ReCaptcha into React apps easier and smoother.
 
@@ -23,7 +23,7 @@ There are two steps that you need to implement.
 This function should be imported and called in the main (parent) component of your app. We recommend calling it in `componentDidMount()` of `App.js`.
 
 ```
-import { loadReCaptcha } from 'react-recaptcha-google'
+import { loadReCaptcha } from 'react-recaptcha-v3'
 
 ...
 
@@ -41,7 +41,7 @@ Create a new component with the following code and give it a try!
 
 ```
 import React, { Component } from 'react';
-import { ReCaptcha } from 'react-recaptcha-google'
+import { ReCaptcha } from 'react-recaptcha-v3'
 
 class ExampleComponent extends Component {
 
@@ -74,9 +74,3 @@ class ExampleComponent extends Component {
 export default ExampleComponent;
 
 ```
-
-
-##### Optional props
-
-* `data-theme` - you can add `theme` prop with a value of either `"dark"` or `"light"`(default) to control the background theme of the visible ReCaptcha (when size is `normal` or `compact`)
-* `data-badge` - you can send `badge` prop with one of the following values: bottomright (default), bottomleft, inline. This will allowyou to reposition the ReCaptcha badge.

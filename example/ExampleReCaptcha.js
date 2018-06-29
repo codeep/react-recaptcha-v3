@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ReCaptcha, loadReCaptcha } from './react-recaptcha-google';
+import { ReCaptcha } from 'react-recaptcha-v3';
 
 class ExampleReCaptcha extends Component {
 
