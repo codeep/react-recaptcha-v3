@@ -11,5 +11,6 @@
     "react": "^16.6.3",
     "react-recaptcha-v3": "../src"
   },
-  "author": ""
+  "devDependencies": {},
+  "author": "Lyakhov Alexey <justfly1984@gmail.com>"
 }

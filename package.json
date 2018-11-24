@@ -16,7 +16,8 @@
   "scripts": {
     "start": "webpack --watch",
     "build": "webpack",
-    "lint": "npx eslint ./src"
+    "lint": "npx eslint ./src",
+    "clean": "rm -rf ./package-lock.json ./node_modules/"
   },
   "repository": {
     "type": "git",
@@ -39,6 +40,10 @@
     "@babel/preset-env": "^7.1.6",
     "@types/acorn": "^4.0.3",
     "@types/eslint": "^4.16.4",
+    "@types/prop-types": "^15.5.6",
+    "@types/react": "^16.7.7",
+    "@types/uglifyjs-webpack-plugin": "^1.1.0",
+    "@types/webpack-bundle-analyzer": "^2.13.0",
     "acorn": "^6.0.4",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.4",
@@ -63,8 +68,13 @@
     "eslint-plugin-react-functional-set-state": "1.2.1",
     "eslint-plugin-react-perf": "2.0.9",
     "eslint-plugin-standard": "4.0.0",
+    "prop-types": "^15.6.2",
+    "react": "^15.6.2 || ^16.x",
+    "uglifyjs-webpack-plugin": "^2.0.1",
     "webpack": "^4.26.0",
+    "webpack-bundle-analyzer": "^3.0.3",
     "webpack-cli": "^3.1.2"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "sideEffects": false
 }
