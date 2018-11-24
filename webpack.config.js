@@ -1,6 +1,7 @@
 const path = require('path')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const pkg = require('./package.json')
 
 module.exports = {
   mode: 'production',
@@ -9,7 +10,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'index.js',
     libraryTarget: 'commonjs2',
-    library: 'react-recaptcha-v3'
+    library: pkg.name
   },
   module: {
     rules: [
@@ -40,7 +41,17 @@ module.exports = {
     })
   ],
   externals: {
-    'react': 'commonjs react',
-    'prop-types': 'commonjs prop-types' // this line is just to use the React dependency of our parent-testing-project instead of using our own React.
+    'react': {
+      commonjs: 'react',
+      commonjs2: 'react',
+      amd: 'React',
+      root: 'React'
+    },
+    'prop-types': {
+      commonjs: 'prop-types',
+      commonjs2: 'prop-types',
+      amd: 'PropTypes',
+      root: 'PropTypes'
+    }
   }
 }

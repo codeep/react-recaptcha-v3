@@ -1,4 +1,3 @@
-// eslint-disable-next-line dependencies/no-unresolved
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
