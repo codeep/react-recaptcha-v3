@@ -1,9 +1,8 @@
-import React from 'react';
-import ReCaptcha from './ReCaptcha';
-import loadReCaptcha from './loadReCaptcha';
 
+const ReCaptcha = require('./ReCaptcha').default
+const loadReCaptcha = require('./loadReCaptcha').default
 
 module.exports = {
-  ReCaptcha: ReCaptcha,
-  loadReCaptcha: loadReCaptcha
+  ReCaptcha,
+  loadReCaptcha
 }
