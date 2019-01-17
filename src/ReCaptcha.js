@@ -41,7 +41,8 @@ const defaultProps = {
 
 const isReady = () =>
   typeof window !== 'undefined' &&
-  typeof window.grecaptcha !== 'undefined'
+  typeof window.grecaptcha !== 'undefined' &&
+  typeof window.grecaptcha.execute !== 'undefined'
 
 let readyCheck
 
