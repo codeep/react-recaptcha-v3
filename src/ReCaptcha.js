@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 const propTypes = {
   elementID: PropTypes.string,
   verifyCallbackName: PropTypes.string,
-  verifyCallback: PropTypes.func.isRequired,
+  verifyCallback: PropTypes.func,
   sitekey: PropTypes.string.isRequired,
   action: PropTypes.string.isRequired
   //  expiredCallback: PropTypes.func,
@@ -53,7 +53,6 @@ class ReCaptcha extends Component {
 
     this.state = {
       ready: isReady()
-      //  widget: null,
     }
 
     if (!this.state.ready) {
@@ -81,30 +80,19 @@ class ReCaptcha extends Component {
   }
 
   execute () {
-    // const {
-    //   ready,
-    // //   widget
-    // } = this.state
-
     const {
       sitekey,
       verifyCallback,
       action,
-    //   elementID
     } = this.props
 
-    // var widgetId
-    // console.log('executing, ready:', ready);
-
     if (this.state.ready) {
-      // widgetId = window.grecaptcha.render(elementID, {
-      //   'sitekey': sitekey,
-      //   'callback': verifyCallback
-      // });
       window.grecaptcha.execute(sitekey, { action })
         .then(token => {
-          verifyCallback(token)
-          // console.log(window.grecaptcha.getResponse(widgetId))
+
+          if (typeof verifyCallback !== 'undefined') {
+            verifyCallback(token)
+          }
         })
     }
   }
