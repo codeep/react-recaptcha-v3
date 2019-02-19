@@ -74,3 +74,16 @@ class ExampleComponent extends Component {
 export default ExampleComponent;
 
 ```
+
+#### Actions
+
+The ReCaptcha block can be triggered without a callback in order to trigger an action. 
+
+See https://developers.google.com/recaptcha/docs/v3#Actions for more Information.
+
+```
+<ReCaptcha
+    sitekey="your_site_key"
+    action='action_name'
+/>
+```
