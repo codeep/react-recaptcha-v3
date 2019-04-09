@@ -1,4 +1,3 @@
-
 const ReCaptcha = require('./ReCaptcha').default
 const loadReCaptcha = require('./loadReCaptcha').default
 

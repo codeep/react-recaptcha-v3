@@ -7,41 +7,17 @@ const propTypes = {
   verifyCallback: PropTypes.func,
   sitekey: PropTypes.string.isRequired,
   action: PropTypes.string.isRequired
-  //  expiredCallback: PropTypes.func,
-  //  render: PropTypes.string,
-  //  onloadCallback: PropTypes.func,
-  //  className: PropTypes.string,
-  //  onloadCallbackName: PropTypes.string,
-  //  theme: PropTypes.string,
-  //  type: PropTypes.string,
-
-  //  expiredCallbackName: PropTypes.string,
-  //  size: PropTypes.string,
-  //  tabindex: PropTypes.string,
-  //  hl: PropTypes.string,
-  //  badge: PropTypes.string
 }
 
 const defaultProps = {
   elementID: 'g-recaptcha',
-  verifyCallbackName: 'verifyCallback',
-  //  onloadCallback: undefined,
-  //  onloadCallbackName: 'onloadCallback',
-  //   expiredCallback: undefined,
-  //  expiredCallbackName: 'expiredCallback',
-  //  render: 'onload',
-  //   theme: 'light',
-  //   type: 'image',
-  //  size: 'normal',
-  //  tabindex: '0',
-  //   hl: 'en',
-  //  badge: 'bottomright',
-  //   render: 'explicit'
+  verifyCallbackName: 'verifyCallback'
 }
 
 const isReady = () =>
   typeof window !== 'undefined' &&
-  typeof window.grecaptcha !== 'undefined'
+  typeof window.grecaptcha !== 'undefined' &&
+  typeof window.grecaptcha.execute !== 'undefined'
 
 let readyCheck
 
@@ -67,10 +43,7 @@ class ReCaptcha extends Component {
   }
 
   componentDidUpdate (_, prevState) {
-    if (
-      this.state.ready &&
-      !prevState.ready
-    ) {
+    if (this.state.ready && !prevState.ready) {
       this.execute()
     }
   }
@@ -106,18 +79,14 @@ class ReCaptcha extends Component {
   }
 
   render () {
-    return this.state.ready
-      ? (
-        <div
-          id={this.props.elementID}
-          data-verifycallbackname={this.props.verifyCallbackName}
-        />
-      )
-      : (
-        <div id={this.props.elementID}
-          className='g-recaptcha'
-        />
-      )
+    return this.state.ready ? (
+      <div
+        id={this.props.elementID}
+        data-verifycallbackname={this.props.verifyCallbackName}
+      />
+    ) : (
+      <div id={this.props.elementID} className='g-recaptcha' />
+    )
   }
 }
 
