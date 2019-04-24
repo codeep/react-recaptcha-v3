@@ -15,7 +15,7 @@
   "main": "dist/index.js",
   "scripts": {
     "start": "webpack --watch",
-    "build": "webpack",
+    "build": "NODE_ENV=production webpack",
     "lint": "npx eslint ./src",
     "clean": "rm -rf ./package-lock.json ./node_modules/",
     "prepublish": "rm -rf ./dist && npm run build"

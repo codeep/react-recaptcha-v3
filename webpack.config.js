@@ -2,6 +2,7 @@ const path = require('path')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const pkg = require('./package.json')
+const isProd = process.env.NODE_ENV === 'production'
 
 module.exports = {
   mode: 'production',
@@ -34,7 +35,7 @@ module.exports = {
   },
   plugins: [
     new BundleAnalyzerPlugin({
-      analyzerMode: 'server',
+      analyzerMode: isProd ? 'disabled' : 'server',
       analyzerPort: 3333,
       defaultSizes: 'gzip',
       openAnalyzer: true
@@ -55,3 +56,5 @@ module.exports = {
     }
   }
 }
+
+
