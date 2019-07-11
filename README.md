@@ -28,9 +28,16 @@ import { loadReCaptcha } from 'react-recaptcha-v3'
 ...
 
 componentDidMount() {
-  loadReCaptcha(your_site_key);
+  loadReCaptcha(your_site_key, callback);
 }
 ```
+
+### loadRecaptcha API
+
+| Parameters           | Type    | Default   | Required | Description                  |
+|----------------------|---------|-----------|----------|------------------------------|
+| your_site_key        | string  | undefined | true     | Corresponds to the site key you get from [here](https://www.google.com/recaptcha/admin#v3signup "V3 signup") |
+| callback             | func    | () => {}  | false    | Function called when grepcaptcha is correctly loaded |s
 
 
 ### 2. Use `ReCaptcha` to integrate ReCaptcha in a particular component
@@ -74,6 +81,14 @@ class ExampleComponent extends Component {
 export default ExampleComponent;
 
 ```
+
+### ReCaptcha props
+
+| Parameters           | Type    | Default   | Required | Description                  |
+|----------------------|---------|-----------|----------|------------------------------|
+| sitekey              | string  | undefined | true     | Corresponds to the site key you get from [here](https://www.google.com/recaptcha/admin#v3signup "V3 signup") |
+| action               | string  | undefined | true     | Name of the action performed by the reCaptcha, more on that [here](https://developers.google.com/recaptcha/docs/v3#Actions "V3 actions") |
+| verifyCallback       | func    | undefined | false     | This function will be called when reCaptcha is ready, and receives the recaptchaToken as the first and unique parameter |
 
 #### Actions
 
