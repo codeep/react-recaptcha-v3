@@ -62,7 +62,6 @@ class ReCaptcha extends Component {
     if (this.state.ready) {
       window.grecaptcha.execute(sitekey, { action })
         .then(token => {
-
           if (typeof verifyCallback !== 'undefined') {
             verifyCallback(token)
           }
