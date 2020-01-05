@@ -22,23 +22,15 @@ const isReady = () =>
 let readyCheck
 
 class ReCaptcha extends Component {
-  constructor (props) {
-    super(props)
-
-    this.execute = this.execute.bind(this)
-
-    this.state = {
-      ready: isReady()
-    }
-
-    if (!this.state.ready) {
-      readyCheck = setInterval(this._updateReadyState.bind(this), 1000)
-    }
+  state = {
+    ready: isReady()
   }
 
   componentDidMount () {
     if (this.state.ready) {
-      this.execute()
+      this.execute();
+    } else {
+      readyCheck = setInterval(this._updateReadyState, 1000);
     }
   }
 
@@ -52,7 +44,7 @@ class ReCaptcha extends Component {
     clearInterval(readyCheck)
   }
 
-  execute () {
+  execute = () => {
     const {
       sitekey,
       verifyCallback,
@@ -70,13 +62,13 @@ class ReCaptcha extends Component {
     }
   }
 
-  _updateReadyState () {
+  _updateReadyState = () => {
     if (isReady()) {
-      this.setState(() => ({ ready: true }))
+      this.setState(() => ({ ready: true }));
 
-      clearInterval(readyCheck)
+      clearInterval(readyCheck);
     }
-  }
+  };
 
   render () {
     return this.state.ready ? (
