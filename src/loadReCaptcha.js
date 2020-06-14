@@ -5,8 +5,7 @@ const loadReCaptcha = (siteKey, callback = () => {}) => {
   if (!window.onLoadCaptchaV3Callback && callback) {
     window.onLoadCaptchaV3Callback = callback
   }
-
-  script.src = `https://www.google.com/recaptcha/api.js?onload=onLoadCaptchaV3Callback&render=${siteKey}`
+  script.src = `https://www.recaptcha.net/recaptcha/api.js?onload=onLoadCaptchaV3Callback&render=${siteKey}`
 
   document.body.appendChild(script)
 }
