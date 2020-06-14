@@ -57,11 +57,16 @@ class ExampleComponent extends Component {
     console.log(recaptchaToken, "<= your recaptcha token")
   }
 
+  updateToken = () => {
+    // you will get a new token in verifyCallback
+    this.recaptcha.execute();
+  }
   render() {
     return (
       <div>
 
         <ReCaptcha
+            ref={ref => this.recaptcha = ref}
             sitekey="your_site_key"
             action='action_name'
             verifyCallback={this.verifyCallback}
