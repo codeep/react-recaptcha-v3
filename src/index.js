@@ -1,4 +1,4 @@
 import ReCaptcha from './ReCaptcha'
-import loadRecaptcha from './loadReCaptcha'
+import loadReCaptcha from './loadReCaptcha'
 
-export { ReCaptcha, loadRecaptcha }
+export { ReCaptcha, loadReCaptcha }
