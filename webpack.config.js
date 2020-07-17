@@ -1,6 +1,6 @@
 const path = require('path')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const TerserPlugin = require('terser-webpack-plugin');
 const pkg = require('./package.json')
 const isProd = process.env.NODE_ENV === 'production'
 
@@ -29,9 +29,12 @@ module.exports = {
     ]
   },
   optimization: {
-    minimizer: [new UglifyJsPlugin({
-      test: /\.js(\?.*)?$/i
-    })]
+    minimize: true,
+    minimizer: [
+      new TerserPlugin({
+        test: /\.js(\?.*)?$/i,
+      }),
+    ],
   },
   plugins: [
     new BundleAnalyzerPlugin({

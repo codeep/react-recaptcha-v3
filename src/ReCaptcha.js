@@ -22,13 +22,16 @@ const isReady = () =>
 let readyCheck
 
 class ReCaptcha extends Component {
-  state = {
-    ready: isReady()
+  constructor (props) {
+    super(props)
+    this.state = {
+      ready: isReady()
+    }
   }
 
   componentDidMount () {
     if (this.state.ready) {
-      this.execute();
+      this.execute()
     } else {
       readyCheck = setInterval(this._updateReadyState, 1000);
     }
@@ -54,7 +57,6 @@ class ReCaptcha extends Component {
     if (this.state.ready) {
       window.grecaptcha.execute(sitekey, { action })
         .then(token => {
-
           if (typeof verifyCallback !== 'undefined') {
             verifyCallback(token)
           }
@@ -64,9 +66,8 @@ class ReCaptcha extends Component {
 
   _updateReadyState = () => {
     if (isReady()) {
-      this.setState(() => ({ ready: true }));
-
-      clearInterval(readyCheck);
+      this.setState(() => ({ ready: true }))
+      clearInterval(readyCheck)
     }
   };
 

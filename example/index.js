@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { ReCaptcha, loadRecaptcha } from 'react-recaptcha-v3'
+import { ReCaptcha, loadReCaptcha } from 'react-recaptcha-v3'
 
 const verifyCallback = token => {
   // Here you will get the final token!!!
@@ -8,7 +8,7 @@ const verifyCallback = token => {
 
 class Example extends Component {
   componentDidMount () {
-    loadRecaptcha('your_site_key')
+    loadReCaptcha('your_site_key')
   }
 
   render () {

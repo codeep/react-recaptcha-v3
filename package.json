@@ -1,6 +1,6 @@
 {
-  "name": "@chaitanyapotti/react-recaptcha-v3",
-  "version": "1.1.0",
+  "name": "react-recaptcha-v3",
+  "version": "2.0.0",
   "description": "This library helps to integrate google recaptcha into your react project easily. ",
   "keywords": [
     "react",
@@ -40,11 +40,11 @@
     "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
     "@babel/plugin-transform-react-jsx": "^7.1.6",
     "@babel/preset-env": "^7.1.6",
+    "@babel/preset-react": "^7.10.1",
     "@types/acorn": "^4.0.3",
     "@types/eslint": "^4.16.4",
     "@types/prop-types": "^15.5.6",
     "@types/react": "^16.7.7",
-    "@types/uglifyjs-webpack-plugin": "^1.1.0",
     "@types/webpack-bundle-analyzer": "^2.13.0",
     "acorn": "^6.0.4",
     "babel-eslint": "^10.0.1",
@@ -72,7 +72,7 @@
     "eslint-plugin-standard": "4.0.0",
     "prop-types": "^15.6.2",
     "react": "^15.6.2 || ^16.x",
-    "uglifyjs-webpack-plugin": "^2.0.1",
+    "terser-webpack-plugin": "^3.0.4",
     "webpack": "^4.26.0",
     "webpack-bundle-analyzer": "^3.0.3",
     "webpack-cli": "^3.1.2"

@@ -1,7 +1,4 @@
-const ReCaptcha = require('./ReCaptcha').default
-const loadReCaptcha = require('./loadReCaptcha').default
+import ReCaptcha from './ReCaptcha'
+import loadReCaptcha from './loadReCaptcha'
 
-module.exports = {
-  ReCaptcha,
-  loadReCaptcha
-}
+export { ReCaptcha, loadReCaptcha }
