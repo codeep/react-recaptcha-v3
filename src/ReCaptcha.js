@@ -69,7 +69,7 @@ class ReCaptcha extends Component {
       this.setState(() => ({ ready: true }))
       clearInterval(readyCheck)
     }
-  };
+  }
 
   render () {
     return this.state.ready ? (
