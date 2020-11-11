@@ -22,14 +22,20 @@ There are two steps that you need to implement.
 
 This function should be imported and called in the main (parent) component of your app. We recommend calling it in `componentDidMount()` of `App.js`.
 
-```
+```js
 import { loadReCaptcha } from 'react-recaptcha-v3'
 
-...
+// ...
 
 componentDidMount() {
   loadReCaptcha(your_site_key, callback);
 }
+
+// OR, with hooks
+
+useEffect(() => {
+  loadReCaptcha(your_site_key, callback);
+}, []);
 ```
 
 ### loadRecaptcha API
@@ -46,7 +52,7 @@ componentDidMount() {
 
 Create a new component with the following code and give it a try!
 
-```
+```js
 import React, { Component } from 'react';
 import { ReCaptcha } from 'react-recaptcha-v3'
 
@@ -101,7 +107,7 @@ The ReCaptcha block can be triggered without a callback in order to trigger an a
 
 See https://developers.google.com/recaptcha/docs/v3#Actions for more Information.
 
-```
+```js
 <ReCaptcha
     sitekey="your_site_key"
     action='action_name'
