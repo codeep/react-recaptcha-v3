@@ -1,6 +1,6 @@
 {
   "name": "react-recaptcha-v3",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "This library helps to integrate google recaptcha into your react project easily. ",
   "keywords": [
     "react",
@@ -31,8 +31,8 @@
   },
   "homepage": "https://github.com/codeep/react-recaptcha-v3#readme",
   "peerDependencies": {
-    "react": "^15.6.2 || ^16.x",
-    "prop-types": "^15.6.2"
+    "prop-types": "^15.6.2",
+    "react": "^15.6.2 || ^16.x || ^17.x"
   },
   "devDependencies": {
     "@babel/core": "^7.1.6",
@@ -70,12 +70,11 @@
     "eslint-plugin-react-perf": "2.0.9",
     "eslint-plugin-standard": "4.0.0",
     "prop-types": "^15.6.2",
-    "react": "^15.6.2 || ^16.x",
+    "react": "^15.6.2 || ^16.x || v17.x",
     "terser-webpack-plugin": "^3.0.4",
     "webpack": "^4.26.0",
     "webpack-bundle-analyzer": "^3.0.3",
     "webpack-cli": "^3.1.2"
   },
-  "dependencies": {},
   "sideEffects": false
 }

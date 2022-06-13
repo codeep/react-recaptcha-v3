@@ -1,6 +1,6 @@
 const path = require('path')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
-const TerserPlugin = require('terser-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin')
 const pkg = require('./package.json')
 const isProd = process.env.NODE_ENV === 'production'
 
@@ -59,5 +59,3 @@ module.exports = {
     }
   }
 }
-
-

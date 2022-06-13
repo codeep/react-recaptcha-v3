@@ -33,7 +33,7 @@ class ReCaptcha extends Component {
     if (this.state.ready) {
       this.execute()
     } else {
-      readyCheck = setInterval(this._updateReadyState, 1000);
+      readyCheck = setInterval(this._updateReadyState, 1000)
     }
   }
 
